@@ -4920,12 +4920,12 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>copado__User_Story__c.copado__Last_Validation_Deployment__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>copado__User_Story__c.copado__Last_Validation_Promotion__c</field>
         <readable>true</readable>
     </fieldPermissions>

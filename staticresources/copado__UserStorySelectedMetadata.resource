@@ -328,13 +328,14 @@ var USselectedMetadata = USselectedMetadata || {};
             var setOfUserStoryTypes = t? t.split(/\s*;\s*/g) : [];
             setOfUserStoryTypes.sort();
             
-            var areThereDifferences= compareArrays(setofSelectedType, setOfUserStoryTypes);
+            var areThereDifferences= (setofSelectedType || setOfUserStoryTypes) && !compareArrays(setofSelectedType, setOfUserStoryTypes);
             
             console.log('userStorySelectedMetadata:::', areThereDifferences, setofSelectedType, setOfUserStoryTypes);
 
-            if( !areThereDifferences ) {
-                changes[app.conf.ns+'Metadata_Types_in_Selection__c'] = setofSelectedType.join(';');
-            console.log('userStorySelectedMetadata: sending to update', changes);
+            if( areThereDifferences ) {
+                // NOTE: it must be null in order to clear the multipicklist Metadata_Types_in_Selection__c. Empty string wont do.
+                changes[app.conf.ns+'Metadata_Types_in_Selection__c'] = setofSelectedType&&setofSelectedType.length?setofSelectedType.join(';'):null;
+                console.log('userStorySelectedMetadata: sending to update', changes);
                 window.parent.postMessage({"from":"userStorySelectedMetadata", "hasChanges":true, "change":changes}, "*");
             } else {
                 window.parent.postMessage({"from":"userStorySelectedMetadata", "hasChanges":false, "change":changes}, "*");
