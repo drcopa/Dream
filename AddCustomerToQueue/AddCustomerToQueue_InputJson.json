@@ -4,7 +4,9 @@
             "Email": null,
             "FirstName": null,
             "LastName": null,
-            "Mobile": null
+            "Mobile": null,
+            "MobileBrand": null,
+            "MobileProvider": null
         },
         "ContactInfoCollectionBlock": {
             "MailOption": null,
@@ -32,7 +34,8 @@
     },
     "Welcome Page": {
         "MandatoryFieldValidation": null,
-        "Preference 1": null
+        "Preference 1": null,
+        "Preference 2": null
     },
     "timeStamp": null,
     "userId": null,
