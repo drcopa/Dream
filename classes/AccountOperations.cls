@@ -2,7 +2,7 @@ public class AccountOperations {
     public static Account setDefaultDescription(Account a) {        
         
         if (a.Description != null) return a;
-            else a.Description = 'Default Description';
+            else a.Description = 'Conflicted Description';
         
         // Avoid SOQL inside loops
         for (Integer i = 0; i < 10; i++) {
